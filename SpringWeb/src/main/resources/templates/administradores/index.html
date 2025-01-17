@@ -44,16 +44,8 @@
                                             <td th:text = "${administrador.nome}"></td>
                                             <td th:text = "${administrador.email}"></td>
                                             <td th:text = "${administrador.senha}"></td>
-                                            <td><a href="#" class="btn btn-warning">Alterar</td>                                            
-                                            
-                                               <!-- <td><a href="#" th:onclick="'if(confirm(\'confirma?\')) 
-                                                {'window.location.href =\'' + @{/administradores/{id}(id=${administrador.id})} + 
-                                                '/excluir\' }'" class= "btn-danger">Excluir</td> -->
-
-
-                                                <td>
-                                                    <a href="#" th:onclick="|if(confirm('Confirma?')) { window.location.href='@{/administradores/{id}/excluir(id=${administrador.id})}' }|" class="btn btn-danger">Excluir</a>
-                                                </td>
+                                            <td><a th:href="@{|/administradores/${administrador.id}|}" class="btn btn-warning">Alterar</a></td>   
+                                            <td><a href="#" th:onclick="|if(confirm('Confirma?')) { window.location.href='@{/administradores/{id}/excluir(id=${administrador.id})}' }|" class="btn btn-danger">Excluir</a></td>
                                                 
                                         </tr>
                                     </tbody>

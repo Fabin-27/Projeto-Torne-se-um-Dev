@@ -26,7 +26,7 @@ public class Administrador {
     @Column(name = "senha", length = 255, nullable = false)
     private String senha;
 
-    @Column(name = "observacao", columnDefinition = "LONGTEXT")
+    @Column(name = "observacao", length = 1000)
     @Lob
     private String observacao;
 

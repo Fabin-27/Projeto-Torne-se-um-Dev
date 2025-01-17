@@ -4,32 +4,32 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Novo Administrador </h1>
-                    <p class="mb-4">Aqui irá cadastrar um novo administrador.</p>
+                    <h1 class="h3 mb-2 text-gray-800">Edição de Administradores </h1>
+                    <p class="mb-4">Aqui irá editar o administrador.</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4" style="padding: 30px;">
 
-                        <form method="POST" action="/administradores/criar" >
+                        <form method="POST" th:action="@{'/administradores/' + ${administrador?.id} + '/atualizar'} ">
 
                             <div class="form-group">
                                 <label for="nome">Nome</label>
-                                <input type="text" class="form-control" required id="nome" name="nome" placeholder="Digite o seu nome">
+                                <input type="text" class="form-control" th:value="${administrador?.nome}" required id="nome" name="nome" placeholder="Digite o seu nome">
                               </div>
                               <div class="form-group">
                                 <label for="nome">Email</label>
-                                <input type="email" class="form-control" required id="email" name="email" placeholder="Digite o seu email">
+                                <input type="email" class="form-control" th:value="${administrador?.email}" required id="email" name="email" placeholder="Digite o seu email">
                               </div>
                               <div class="form-group">
                                 <label for="senha">Senha</label>
-                                <input type="password" class="form-control" required id="senha" name="senha" placeholder="Digite a sua senha">
+                                <input type="password" class="form-control" th:value="${administrador?.senha}" required id="senha" name="senha" placeholder="Digite a sua senha">
                               </div>
                               <div class="form-group">
                                 <label for="observacao">Observação</label>
-                                <textarea class="form-control" th:value="${administrador?.observacao}" id="observacao" name="observacao" placeholder="Digite a observação"></textarea>
+                                <textarea class="form-control" id="observacao" name="observacao" placeholder="Digite a observação" th:inline="text">[[${administrador.observacao}]]</textarea>
 
                               </div>
-                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
 
                           </form>
                        
