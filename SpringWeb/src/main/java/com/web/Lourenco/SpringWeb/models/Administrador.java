@@ -62,9 +62,14 @@ public class Administrador {
         this.email = email;
     }
 
-    public String getSenha() {
+    public String getSenhaMascarada() {
         return senha.substring(0, 3) + "***";
+    }    
+
+    public String getSenha() {
+        return senha;
     }
+    
 
     public void setSenha(String senha) {
         this.senha = senha;

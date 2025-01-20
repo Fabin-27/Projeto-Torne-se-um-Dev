@@ -43,7 +43,7 @@
                                             <td th:text = "${administrador.id}"></td>
                                             <td th:text = "${administrador.nome}"></td>
                                             <td th:text = "${administrador.email}"></td>
-                                            <td th:text = "${administrador.senha}"></td>
+                                            <td th:text="${administrador.senhaMascarada}"></td>
                                             <td><a th:href="@{|/administradores/${administrador.id}|}" class="btn btn-warning">Alterar</a></td>   
                                             <td><a href="#" th:onclick="|if(confirm('Confirma?')) { window.location.href='@{/administradores/{id}/excluir(id=${administrador.id})}' }|" class="btn btn-danger">Excluir</a></td>
                                                 
